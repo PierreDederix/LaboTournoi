@@ -6,17 +6,19 @@ import {HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { GestionTournoisComponent } from './components/gestion-tournois/gestion-tournois.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { ConnectionComponent } from './components/connection/connection.component';
+import { TournoiComponent } from './components/tournoi/tournoi.component';
+import { AddTournoiComponent } from './components/tournoi/add-tournoi/add-tournoi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    GestionTournoisComponent,
     AccueilComponent,
-    ConnectionComponent
+    ConnectionComponent,
+    TournoiComponent,
+    AddTournoiComponent
   ],
   imports: [
     CommonModule,

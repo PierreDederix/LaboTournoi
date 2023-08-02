@@ -1,5 +1,5 @@
 export enum TournamentStatus {
-    W = 'WaitingForPlayers',
-    I = 'InProgress',
+    WFP = 'WaitingForPlayers',
+    IP = 'InProgress',
     C = 'Closed'
 }

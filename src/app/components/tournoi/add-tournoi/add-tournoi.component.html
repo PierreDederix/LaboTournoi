@@ -1,0 +1,42 @@
+<h1>Ajouter un tournoi :</h1>
+<a routerLink="/tournoi">Retour à la liste des tournois</a>
+
+<form [formGroup]="tournoiForm" (ngSubmit)="addTournoi()">
+    <div>
+        <input type="text" placeholder="Nom du tournoi" formControlName="name">
+        <span *ngIf="tournoiForm.get('name')?.touched && tournoiForm.get('name')?.errors?.['required']">Ce champs est requis</span>
+        <span *ngIf="tournoiForm.get('name')?.errors?.['maxlength']">Ce champs doit faire moins de 100 caractères</span>
+    </div>
+    <div>
+        <input type="text" placeholder="Lieu du tournoi (facultatif)" formControlName="location">
+        <span *ngIf="tournoiForm.get('location')?.errors?.['maxlength']">Ce champs doit faire moins de 100 caractères</span>
+    </div>
+    <div>
+        <input type="number" placeholder="Nombre de joueurs minimum" formControlName="minPlayers">
+        <span *ngIf="tournoiForm.get('minPlayers')?.touched && tournoiForm.get('minPlayers')?.errors?.['required']">Ce champs est requis</span>
+        <span *ngIf="tournoiForm.get('minPlayers')?.errors?.['max']">Ce champs ne peut pas être supérieur à 16</span>
+        <span *ngIf="tournoiForm.get('minPlayers')?.errors?.['min']">Ce champs ne peut pas être inférieur à 2</span>
+    </div>
+    <div>
+        <input type="number" placeholder="Nombre de joueurs maximum" formControlName="maxPlayers">
+        <span *ngIf="tournoiForm.get('maxPlayers')?.touched && tournoiForm.get('maxPlayers')?.errors?.['required']">Ce champs est requis</span>
+        <span *ngIf="tournoiForm.get('maxPlayers')?.errors?.['max']">Ce champs ne peut pas être supérieur à 16</span>
+        <span *ngIf="tournoiForm.get('maxPlayers')?.errors?.['min']">Ce champs ne peut pas être inférieur à 2</span>
+    </div>
+    <div>
+        <input type="number" placeholder="elo minimum" formControlName="eloMin">
+        <span *ngIf="tournoiForm.get('eloMin')?.errors?.['max']">Ce champs ne peut pas être supérieur à 3000</span>
+        <span *ngIf="tournoiForm.get('eloMin')?.errors?.['min']">Ce champs ne peut pas être inférieur à 0</span>
+    </div>
+    <div>
+        <input type="number" placeholder="elo maximum" formControlName="eloMax">
+        <span *ngIf="tournoiForm.get('eloMax')?.errors?.['max']">Ce champs ne peut pas être supérieur à 3000</span>
+        <span *ngIf="tournoiForm.get('eloMax')?.errors?.['min']">Ce champs ne peut pas être inférieur à 0</span>
+    </div>
+    <div>
+        <input type="checkbox" id="womenOnly" formControlName="womenOnly"> <label for="womenOnly">Women Only</label>
+    </div>
+    <div>
+        
+    </div>
+</form>
