@@ -1,1 +1,31 @@
-<a routerLink="/tournoi/add">Ajouter un nouveau tournoi</a>
+<div class="link">
+    <a routerLink="/tournoi/add">Ajouter un nouveau tournoi</a>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>Nom</td>
+            <td>Location</td>
+            <td>Categories</td>
+            <td>Elo</td>
+            <td>Statut</td>
+            <td>Fin des inscriptions</td>
+            <td>Joueurs</td>
+            <td>Actions</td>
+        </tr>
+        <tr *ngFor="let tournoi of listeTournoi.results">
+            <td>{{tournoi.name}}</td>
+            <td>{{tournoi.location}}</td>
+            <td>{{tournoi.categories}}</td>
+            <td>{{tournoi.eloMin}} - {{tournoi.eloMax}}</td>
+            <td></td>
+            <td>{{tournoi.endOfRegistrationDate}}</td>
+            <td>{{tournoi.minPlayers}} - {{tournoi.maxPlayers}}</td>
+            <td>
+                <button routerLink="/tournoi/details">🔎</button>
+                <button (click)="delete(tournoi.id)">❌</button>
+            </td>
+        </tr>
+    </table>
+</div>

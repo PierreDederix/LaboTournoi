@@ -1,1 +1,12 @@
-<p>connection works!</p>
+<div *ngIf="!connectedUser">
+    <div>
+        <p>Entrez un nom d'utilisateur ou un email</p>
+        <input type="text" [(ngModel)]="login">
+    </div>
+    <div>
+        <p>Entrez un mot de passe</p>
+        <input type="password" [(ngModel)]="password">
+    </div>
+    <button (click)="connect()">Se connecter</button>
+</div>
+

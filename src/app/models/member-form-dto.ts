@@ -1,4 +1,4 @@
-export interface MemberDTO {
+export interface MemberFormDTO {
     username : string;
     email : string;
     birthdate : Date;

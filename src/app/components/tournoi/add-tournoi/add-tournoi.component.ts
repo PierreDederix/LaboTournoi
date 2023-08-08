@@ -30,7 +30,7 @@ export class AddTournoiComponent {
 
   addTournoi() {
     if (this.tournoiForm.valid) {
-      this._tournoiService.addTournament(this.tournoiForm.value)
+      this._tournoiService.addTournament(this.tournoiForm.value).subscribe(data => console.log(data))
       this._router.navigateByUrl('/tournoi')
     }
     else {

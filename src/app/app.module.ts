@@ -10,6 +10,7 @@ import { AccueilComponent } from './components/accueil/accueil.component';
 import { ConnectionComponent } from './components/connection/connection.component';
 import { TournoiComponent } from './components/tournoi/tournoi.component';
 import { AddTournoiComponent } from './components/tournoi/add-tournoi/add-tournoi.component';
+import { DetailsTournoiComponent } from './components/tournoi/details-tournoi/details-tournoi.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddTournoiComponent } from './components/tournoi/add-tournoi/add-tourno
     AccueilComponent,
     ConnectionComponent,
     TournoiComponent,
-    AddTournoiComponent
+    AddTournoiComponent,
+    DetailsTournoiComponent
   ],
   imports: [
     CommonModule,
