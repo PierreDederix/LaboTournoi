@@ -5,8 +5,8 @@ export interface TournamentAddDTO {
     location : string;
     minPlayers : number;
     maxPlayers : number;
-    eloMin : number;
-    eloMax : number;
+    eloMin : number | null;
+    eloMax : number | null;
     categories : TournamentCategory[];
     womenOnly : boolean;
     endOfRegistrationDate : string;

@@ -34,12 +34,29 @@
         <span class="error" *ngIf="tournoiForm.get('eloMax')?.errors?.['min']">Ce champs ne peut pas être inférieur à 0</span>
     </div>
     <div>
-        <select formControlName="categories" [(ngModel)]="category">
+        <!-- <select formControlName="categories" [(ngModel)]="category">
             <option [ngValue]="''" disabled selected>Sélectionnez une catégorie</option>
             <option *ngFor="let category of categories" [ngValue]="category">
                 {{ category }}
             </option>
-        </select>
+        </select> -->
+        <div >
+            <p>Catégories</p>
+            <div class="adjust">
+            <label >
+            <input type="checkbox"  value="Junior" (change)="updateCategories($event)">
+              Junior
+            </label>
+            <label >
+            <input type="checkbox"  value="Senior" (change)="updateCategories($event)">
+              Senior
+            </label>
+            <label >
+            <input type="checkbox"  value="Veteran" (change)="updateCategories($event)">
+              Vétéran
+            </label>
+            </div>
+          </div>
         <span class="error" *ngIf="tournoiForm.get('categories')?.errors && tournoiForm.get('categories')?.touched">Veuillez choisir une catégorie</span>
     </div>
     <div>

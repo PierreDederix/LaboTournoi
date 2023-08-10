@@ -7,7 +7,8 @@
             <a routerLink="tournoi">Tournois</a>
         </li>
         <li>
-            <a routerLink="connection">Se connecter/S'inscrire</a>
+            <a *ngIf="!isConnected" routerLink="connection">Se connecter/S'inscrire</a>
+            <button *ngIf="isConnected" (click)="logout()">Se déconnecter</button>
         </li>
     </ul>
 </nav>

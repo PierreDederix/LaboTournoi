@@ -2,7 +2,7 @@
     <a routerLink="/tournoi/add">Ajouter un nouveau tournoi</a>
 </div>
 
-<div>
+<div *ngIf="listeTournoi">
     <table>
         <tr>
             <td>Nom</td>

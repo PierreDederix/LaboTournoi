@@ -1,12 +1,23 @@
 <div *ngIf="!connectedUser">
-    <div>
-        <p>Entrez un nom d'utilisateur ou un email</p>
-        <input type="text" [(ngModel)]="login">
-    </div>
-    <div>
-        <p>Entrez un mot de passe</p>
-        <input type="password" [(ngModel)]="password">
-    </div>
-    <button (click)="connect()">Se connecter</button>
+    <form [formGroup]="connectForm" (submit)="connect()">
+        <p>Entrez votre nom d'utilisateur et votre mot de passe</p>
+        <div>
+            <input type="text" placeholder="Entrez un nom d'utilisateur" formControlName="login">
+            <span class="error"
+                *ngIf="connectForm.get('login')?.touched &&
+                connectForm.get('login')?.errors?.['required']">
+                    Ce champs est requis
+            </span>
+        </div>
+        <div>
+            <input type="password" placeholder="Entrez un mot de passe" formControlName="password">
+            <span class="error"
+                *ngIf="connectForm.get('password')?.touched &&
+                connectForm.get('password')?.errors?.['required']">
+                    Ce champs est requis
+            </span>
+        </div>
+        <input class="ajout" type="submit" value="Ajouter">
+    </form>
 </div>
 

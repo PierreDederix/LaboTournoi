@@ -45,6 +45,6 @@ export class TournoiComponent implements OnInit {
   }
 
   delete (id : string) {
-    this._tournoiService.deleteTournament(id);
+    this._tournoiService.deleteTournament(id).subscribe();
   }
 }
