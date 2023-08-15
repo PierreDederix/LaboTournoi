@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TokenDTO } from 'src/app/models/token-dto';
 import { AuthService } from 'src/app/services/auth.service';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-connection',
@@ -16,7 +17,7 @@ export class ConnectionComponent implements OnInit, OnDestroy {
 
   userSubscription : Subscription = new Subscription();
 
-  constructor(private _authService: AuthService, private _fb : FormBuilder, private _router : Router) {
+  constructor(private _sharedDataService : SharedDataService, private _authService: AuthService, private _fb : FormBuilder, private _router : Router) {
     this.connectForm = this._fb.group({
       login : [null, [Validators.required]],
       password : [null, [Validators.required]],
@@ -27,6 +28,7 @@ export class ConnectionComponent implements OnInit, OnDestroy {
      this.userSubscription = this._authService.$connectedUser.subscribe({
        next : (newUser : TokenDTO | undefined) => {
          this.connectedUser = newUser;
+         this._sharedDataService.setConnectedUser(newUser)
        },
        error : (error) => {
          console.log(error);

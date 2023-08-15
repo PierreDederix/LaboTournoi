@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TokenDTO } from 'src/app/models/token-dto';
 import { AuthService } from 'src/app/services/auth.service';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-accueil',
@@ -10,11 +11,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AccueilComponent {
   connectedUser : TokenDTO | undefined;
-  isAdmin : boolean;
 
-  constructor(private _authService : AuthService) {
-    this.connectedUser = this._authService.user;
-    this.isAdmin = _authService.isAdmin;
+  constructor( private _sharedDataService : SharedDataService) {
+    this._sharedDataService.connectedUser$.subscribe(user => {
+      this.connectedUser = user;
+    });
   }
 
   

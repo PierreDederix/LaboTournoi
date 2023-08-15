@@ -1,8 +1,8 @@
-<div class="link">
+<div class="link" *ngIf="connectedUser?.user?.role == 'Admin'">
     <a routerLink="/tournoi/add">Ajouter un nouveau tournoi</a>
 </div>
 
-<div *ngIf="listeTournoi">
+<div *ngIf="listeTournoi && connectedUser">
     <table>
         <tr>
             <td>Nom</td>
@@ -28,4 +28,8 @@
             </td>
         </tr>
     </table>
+</div>
+
+<div *ngIf="!connectedUser">
+    <p>Veuillez vous connecter pour accéder à la liste des tournois</p>
 </div>
