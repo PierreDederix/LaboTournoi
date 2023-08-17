@@ -12,6 +12,7 @@ import { TournoiComponent } from './components/tournoi/tournoi.component';
 import { AddTournoiComponent } from './components/tournoi/add-tournoi/add-tournoi.component';
 import { DetailsTournoiComponent } from './components/tournoi/details-tournoi/details-tournoi.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     ConnectionComponent,
     TournoiComponent,
     AddTournoiComponent,
-    DetailsTournoiComponent
+    DetailsTournoiComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,

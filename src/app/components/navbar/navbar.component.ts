@@ -20,7 +20,8 @@ export class NavbarComponent implements OnDestroy {
   }
 
   logout() {
-    this._authService.logout()
+    this._authService.logout();
+    location.reload()
   }
 
   

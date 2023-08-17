@@ -2,6 +2,17 @@ input{
     margin-bottom : 1rem;
 }
 
+.link{
+    margin-top: 1rem;
+    a{
+        text-decoration: none;
+        color : black;
+    }
+    a:hover{
+        color: blue;
+    }
+}
+
 .error {
     color: red;
 }
