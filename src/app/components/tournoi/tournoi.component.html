@@ -1,3 +1,7 @@
+<div *ngIf="!connectedUser">
+    <p>Veuillez vous connecter pour accéder à la liste des tournois</p>
+</div>
+
 <div class="link" *ngIf="connectedUser?.user?.role == 'Admin'">
     <a routerLink="/tournoi/add">Ajouter un nouveau tournoi</a>
 </div>
@@ -20,7 +24,7 @@
             <td>{{tournoi.categories}}</td>
             <td>{{tournoi.eloMin}} - {{tournoi.eloMax}}</td>
             <td></td>
-            <td>{{tournoi.endOfRegistrationDate}}</td>
+            <td>{{tournoi.endOfRegistrationDate | date : 'dd/MM/yyyy'}}</td>
             <td>{{tournoi.minPlayers}} - {{tournoi.maxPlayers}}</td>
             <td>
                 <button routerLink="/tournoi/details">🔎</button>
@@ -30,6 +34,3 @@
     </table>
 </div>
 
-<div *ngIf="!connectedUser">
-    <p>Veuillez vous connecter pour accéder à la liste des tournois</p>
-</div>

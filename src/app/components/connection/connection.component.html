@@ -1,4 +1,4 @@
-<div *ngIf="!connectedUser">
+<div>
     <form [formGroup]="connectForm" (submit)="connect()">
         <p>Entrez votre nom d'utilisateur et votre mot de passe</p>
         <div>
@@ -21,3 +21,6 @@
     </form>
 </div>
 
+<div class="link">
+    <a routerLink="/register">Créer un nouveau compte</a>
+</div>
