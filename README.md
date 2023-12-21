@@ -1,3 +1,6 @@
+Projet visant à émuler un gestionnaire de tournoi d'échecs. Seules les fonctionnalités liées à l'ajout de tournoi et la connection ont été implantées.
+
+
 # LaboTournoi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
